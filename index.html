@@ -1,0 +1,204 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI Bodyweight Trainer</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box}
+body{font-family:Inter,system-ui;margin:0;background:#0f172a;color:white}
+header{padding:25px;text-align:center;background:#020617}
+h1{margin:0;font-size:34px}
+nav{display:flex;gap:15px;justify-content:center;margin-top:10px;flex-wrap:wrap}
+nav button{background:#1e293b;border:none;color:white;padding:10px 16px;border-radius:10px;cursor:pointer}
+nav button:hover{background:#38bdf8;color:black}
+section{padding:40px;max-width:1100px;margin:auto}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:20px}
+.card{background:#1e293b;border-radius:16px;padding:20px;box-shadow:0 10px 25px rgba(0,0,0,0.3)}
+.card h3{margin-top:0;color:#38bdf8}
+.workout{margin:6px 0;font-size:14px}
+.hidden{display:none}
+.music{margin-top:15px}
+footer{text-align:center;padding:30px;background:#020617;margin-top:40px}
+.level{margin-top:10px;font-size:13px;opacity:.8}
+</style>
+</head>
+<body>
+
+<header>
+<h1>AI Bodyweight Trainer</h1>
+<p>No Equipment • Targeted Muscle Training • Smart Workout</p>
+
+<nav>
+<button onclick="show('chest')">Chest</button>
+<button onclick="show('back')">Back</button>
+<button onclick="show('legs')">Legs</button>
+<button onclick="show('biceps')">Biceps</button>
+<button onclick="show('triceps')">Triceps</button>
+<button onclick="show('forearms')">Forearms</button>
+<button onclick="show('calves')">Calves</button>
+<button onclick="show('core')">Abs / Core</button>
+</nav>
+
+<div class="music">
+<button onclick="connectSpotify()">Connect Spotify Music</button>
+</div>
+
+</header>
+
+<section id="chest" class="muscle">
+<h2>Chest Workout</h2>
+<div class="grid">
+<div class="card">
+<h3>Upper Chest</h3>
+<div class="workout">Decline Pushups</div>
+<div class="workout">Pike Pushups</div>
+<div class="workout">Feet Elevated Pushups</div>
+<div class="level">Beginner → Advanced</div>
+</div>
+
+<div class="card">
+<h3>Middle Chest</h3>
+<div class="workout">Standard Pushups</div>
+<div class="workout">Wide Pushups</div>
+<div class="workout">Explosive Pushups</div>
+</div>
+
+<div class="card">
+<h3>Inner Chest</h3>
+<div class="workout">Diamond Pushups</div>
+<div class="workout">Close Pushups</div>
+</div>
+</div>
+</section>
+
+<section id="back" class="muscle hidden">
+<h2>Back Workout</h2>
+<div class="grid">
+<div class="card">
+<h3>Upper Back</h3>
+<div class="workout">Superman Hold</div>
+<div class="workout">Reverse Snow Angels</div>
+<div class="workout">Prone Y Raises</div>
+</div>
+
+<div class="card">
+<h3>Lats</h3>
+<div class="workout">Floor Pulls</div>
+<div class="workout">Towel Rows</div>
+<div class="workout">Door Rows</div>
+</div>
+</div>
+</section>
+
+<section id="legs" class="muscle hidden">
+<h2>Leg Workout</h2>
+<div class="grid">
+<div class="card">
+<h3>Quads</h3>
+<div class="workout">Bodyweight Squats</div>
+<div class="workout">Jump Squats</div>
+<div class="workout">Bulgarian Split Squats</div>
+</div>
+
+<div class="card">
+<h3>Hamstrings</h3>
+<div class="workout">Glute Bridges</div>
+<div class="workout">Nordic Curl Assisted</div>
+<div class="workout">Single Leg Bridges</div>
+</div>
+</div>
+</section>
+
+<section id="biceps" class="muscle hidden">
+<h2>Biceps</h2>
+<div class="grid">
+<div class="card">
+<h3>Biceps Bodyweight</h3>
+<div class="workout">Towel Curls</div>
+<div class="workout">Chin Up Hold</div>
+<div class="workout">Inverted Rows</div>
+</div>
+</div>
+</section>
+
+<section id="triceps" class="muscle hidden">
+<h2>Triceps</h2>
+<div class="grid">
+<div class="card">
+<h3>Triceps</h3>
+<div class="workout">Bench Dips</div>
+<div class="workout">Diamond Pushups</div>
+<div class="workout">Pseudo Pushups</div>
+</div>
+</div>
+</section>
+
+<section id="forearms" class="muscle hidden">
+<h2>Forearms</h2>
+<div class="grid">
+<div class="card">
+<h3>Grip Strength</h3>
+<div class="workout">Fingertip Pushups</div>
+<div class="workout">Towel Hang</div>
+<div class="workout">Plank Grip Hold</div>
+</div>
+</div>
+</section>
+
+<section id="calves" class="muscle hidden">
+<h2>Calves</h2>
+<div class="grid">
+<div class="card">
+<h3>Calf Development</h3>
+<div class="workout">Standing Calf Raises</div>
+<div class="workout">Single Leg Raises</div>
+<div class="workout">Jump Calf Raises</div>
+</div>
+</div>
+</section>
+
+<section id="core" class="muscle hidden">
+<h2>Abs & Core</h2>
+<div class="grid">
+<div class="card">
+<h3>Upper Abs</h3>
+<div class="workout">Crunches</div>
+<div class="workout">Toe Touch Crunch</div>
+</div>
+
+<div class="card">
+<h3>Lower Abs</h3>
+<div class="workout">Leg Raises</div>
+<div class="workout">Reverse Crunch</div>
+</div>
+
+<div class="card">
+<h3>Core Stability</h3>
+<div class="workout">Plank</div>
+<div class="workout">Mountain Climbers</div>
+<div class="workout">Hollow Hold</div>
+</div>
+</div>
+</section>
+
+<footer>
+<p>AI Bodyweight Trainer • Train Every Muscle Without Equipment</p>
+</footer>
+
+<script>
+function show(muscle){
+let sections=document.querySelectorAll('.muscle');
+sections.forEach(s=>s.classList.add('hidden'));
+document.getElementById(muscle).classList.remove('hidden');
+}
+
+function connectSpotify(){
+alert('To enable music you need to connect a Spotify API key later. This button is placeholder for Spotify integration.');
+}
+</script>
+
+</body>
+</html>
